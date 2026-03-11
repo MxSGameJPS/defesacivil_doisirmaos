@@ -1,6 +1,20 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 
+/**
+ * @swagger
+ * /api/manutencoes:
+ *   get:
+ *     summary: Lista chamados de manutenção
+ *     tags: [Manutenção]
+ *     responses:
+ *       200:
+ *         description: Sucesso
+ *   post:
+ *     summary: Solicita nova manutenção
+ *     tags: [Manutenção]
+ */
+
 export async function GET() {
   try {
     const { rows } = await query(`

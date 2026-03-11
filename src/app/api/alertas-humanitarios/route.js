@@ -1,6 +1,30 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 
+/**
+ * @swagger
+ * /api/alertas-humanitarios:
+ *   get:
+ *     summary: Lista alertas humanitários
+ *     tags: [Alertas]
+ *   post:
+ *     summary: Cria novo alerta humanitário
+ *     tags: [Alertas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               titulo: { type: string }
+ *               tipo: { type: string }
+ *               bairro: { type: string }
+ *               comunidade: { type: string }
+ *               data_inicio: { type: string, format: date }
+ *               ajuda_necessaria: { type: string }
+ */
+
 export async function GET() {
   try {
     const { rows } = await query(

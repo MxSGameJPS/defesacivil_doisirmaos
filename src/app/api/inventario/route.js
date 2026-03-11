@@ -1,6 +1,34 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 
+/**
+ * @swagger
+ * /api/inventario:
+ *   get:
+ *     summary: Lista o inventário completo
+ *     tags: [Inventário]
+ *     responses:
+ *       200:
+ *         description: Lista de itens
+ *   post:
+ *     summary: Adiciona novo item ao inventário
+ *     tags: [Inventário]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [nome, categoria]
+ *             properties:
+ *               nome: { type: string }
+ *               categoria: { type: string }
+ *               quantidade: { type: number }
+ *               localizacao: { type: string }
+ *               condicao: { type: string }
+ *               num_tombo: { type: string }
+ */
+
 export async function GET() {
   try {
     const { rows } = await query("SELECT * FROM inventario ORDER BY id DESC");

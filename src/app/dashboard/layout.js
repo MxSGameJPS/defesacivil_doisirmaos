@@ -16,6 +16,7 @@ import {
   User,
   LogOut,
   Users,
+  PhoneCall,
 } from "lucide-react";
 
 export default function DashboardLayout({ children }) {
@@ -52,6 +53,7 @@ export default function DashboardLayout({ children }) {
     if (pathname === "/dashboard/manutenimento") return "Manutenimento";
     if (pathname === "/dashboard/informacoes") return "Informações";
     if (pathname === "/dashboard/usuarios") return "Gestão de Usuários";
+    if (pathname === "/dashboard/chamados") return "Chamados do Aplicativo";
     return "Gestão de Bairros";
   };
 
@@ -68,6 +70,12 @@ export default function DashboardLayout({ children }) {
         </div>
 
         <nav className={styles.navMenu}>
+          <Link
+            href="/dashboard/chamados"
+            className={`${styles.navItem} ${pathname === "/dashboard/chamados" ? styles.active : ""}`}
+          >
+            <PhoneCall size={20} /> Chamados (App)
+          </Link>
           <Link
             href="/dashboard"
             className={`${styles.navItem} ${pathname === "/dashboard" ? styles.active : ""}`}

@@ -1,6 +1,17 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 
+/**
+ * @swagger
+ * /api/usuarios:
+ *   get:
+ *     summary: Lista usuários (Acesso Restrito)
+ *     tags: [Usuários]
+ *   post:
+ *     summary: Cria novo usuário
+ *     tags: [Usuários]
+ */
+
 export async function GET() {
   try {
     const { rows } = await query(
