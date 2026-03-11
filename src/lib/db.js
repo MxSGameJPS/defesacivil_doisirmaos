@@ -4,8 +4,7 @@ let pool;
 
 if (!global._pgPool) {
   global._pgPool = new Pool({
-    connectionString:
-      "postgresql://postgres.orgfrguxffcflgghdxjt:defesaCivilDoisIrmaos@aws-1-sa-east-1.pooler.supabase.com:6543/postgres",
+    connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false,
     },
