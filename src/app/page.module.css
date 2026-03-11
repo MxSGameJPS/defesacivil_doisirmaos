@@ -1,0 +1,179 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  background-color: #0b111a;
+  color: #fff;
+}
+
+.leftPanel {
+  display: none;
+  background: linear-gradient(135deg, #021a44 0%, #031024 100%);
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-right: 1px solid #162032;
+}
+
+@media (min-width: 900px) {
+  .leftPanel {
+    display: flex;
+    flex: 1.2;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 80%;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #0b111a;
+}
+
+@media (min-width: 900px) {
+  .rightPanel {
+    flex: 0.8;
+  }
+}
+
+.loginBox {
+  width: 100%;
+  max-width: 380px;
+  animation: fadeIn 0.8s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3f88f7;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #8fa0ba;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #121926;
+  border-radius: 6px;
+  border: 1px solid #1a2538;
+  transition: all 0.3s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #3f88f7;
+  box-shadow: 0 0 0 2px rgba(63, 136, 247, 0.15);
+  background-color: #162032;
+}
+
+.inputIcon {
+  color: #5c7294;
+  margin-left: 1rem;
+}
+
+.inputWrapper input {
+  flex: 1;
+  padding: 0.95rem 1rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.inputWrapper input:focus {
+  outline: none;
+}
+
+.inputWrapper input::placeholder {
+  color: #5c7294;
+  font-weight: 500;
+}
+
+.eyeButton {
+  background: none;
+  border: none;
+  color: #5c7294;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.eyeButton:hover {
+  color: #3f88f7;
+}
+
+.button {
+  background-color: #1273e8;
+  color: white;
+  padding: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  background-color: #0d5bbd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(18, 115, 232, 0.25);
+}
+
+.error {
+  color: #ff5e5e;
+  font-size: 0.85rem;
+  text-align: center;
+  background: rgba(255, 94, 94, 0.1);
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 94, 94, 0.2);
+}
